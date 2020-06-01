@@ -25,7 +25,7 @@ def getJSON1000():
     with open("sp1000tickers.json", "r") as f:
         tickers = json.load(f)
 
-    return sorted(tickers)
+    return tickers
 
 '''
 Method that will both update the indices files and return the index tickers
@@ -40,9 +40,7 @@ def updateWiki1000():
         tickers.append(ticker.rstrip())
 
     with open("sp1000tickers.pickle", "wb") as f:
-        pickle.dump(tickers, f)
-
-    #print(tickers)
+        pickle.dump(sorted(tickers), f)
 
     return tickers
 
@@ -59,7 +57,7 @@ def updateWiki1000JSON():
         tickers.append(ticker.rstrip())
 
     with open("sp1000tickers.json", "w") as f:
-        json.dump(tickers, f)
+        json.dump(sorted(tickers), f)
 
     # return tickers
 '''
