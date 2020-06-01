@@ -11,7 +11,7 @@ def write500TickersExcel():
     wb = openpyxl.Workbook() #if file is being created first time
     sheet = wb.active
 
-    myTickers = sorted(wiki500.getWiki500())
+    myTickers = wiki500.getWiki500()
 
     for i, v in enumerate(myTickers):
         cell = 'A' + str((i+2))
@@ -24,7 +24,7 @@ def update500TickersExcel():
     wb = openpyxl.load_workbook('C:/Users/aj282/OneDrive/Desktop/pythonStocks/my500Xl.xlsx') #if file exists
     sheet = wb.active
 
-    myTickers = sorted(wiki500.getWiki500())
+    myTickers = wiki500.getWiki500()
 
     for i, v in enumerate(myTickers):
         cell = 'A' + str((i+2))
@@ -37,7 +37,7 @@ def update5YearForAll():
     wb = openpyxl.load_workbook('C:/Users/aj282/OneDrive/Desktop/pythonStocks/my500Xl.xlsx') #if file exists
     sheet = wb.active
     api = getApi()
-    myTickers = sorted(wiki500.getWiki500())
+    myTickers = wiki500.getWiki500()
     params = getParams()
 
     for i,v in enumerate(myTickers):
@@ -65,7 +65,7 @@ def update1YearForAll():
     wb = openpyxl.load_workbook('C:/Users/aj282/OneDrive/Desktop/pythonStocks/my500Xl.xlsx') #if file exists
     sheet = wb.active
     api = getApi()
-    myTickers = sorted(wiki500.getWiki500())
+    myTickers = wiki500.getWiki500()
     params = getParams()
 
     for i,v in enumerate(myTickers):
@@ -93,7 +93,7 @@ def updateFeb():
     wb = openpyxl.load_workbook('C:/Users/aj282/OneDrive/Desktop/pythonStocks/my500Xl.xlsx') #if file exists
     sheet = wb.active
     api = getApi()
-    myTickers = sorted(wiki500.getWiki500())
+    myTickers = wiki500.getWiki500()
     params = getParams()
     
 
@@ -122,7 +122,7 @@ def updateMarch():
     wb = openpyxl.load_workbook('C:/Users/aj282/OneDrive/Desktop/pythonStocks/my500Xl.xlsx') #if file exists
     sheet = wb.active
     api = getApi()
-    myTickers = sorted(wiki500.getWiki500())
+    myTickers = wiki500.getWiki500()
     params = getParams()
     
 
@@ -151,7 +151,7 @@ def update1DayForAll():
     wb = openpyxl.load_workbook('C:/Users/aj282/OneDrive/Desktop/pythonStocks/my500Xl.xlsx') #if file exists
     sheet = wb.active
     api = getApi()
-    myTickers = sorted(wiki500.getWiki500())
+    myTickers = wiki500.getWiki500()
     params = getParams()
 
     for i,v in enumerate(myTickers):
@@ -210,7 +210,6 @@ def openMarket():
             print("Error occured at {}".format(rowG))
     
     wb.save('C:/Users/aj282/OneDrive/Desktop/pythonStocks/my500Xl.xlsx')
-
 
 def getApi():
     api = tradeapi.REST(API_KEY, SECRET_KEY, api_version='v1')

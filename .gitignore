@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# API Key files
+config.py
+
+# python venv
+stockEnv/*
