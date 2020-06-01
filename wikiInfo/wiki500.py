@@ -57,7 +57,7 @@ def updateWiki500JSON():
             tickers.append(ticker.rstrip())
 
     with open("sp500tickers.json", "w") as f:
-            json.dump(sorted(tickers), f)
+        json.dump(sorted(tickers), f)
 
     #return tickers
 
